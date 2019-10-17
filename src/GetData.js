@@ -38,7 +38,7 @@ class GetData extends React.Component {
       return result.map((tabUsers, index) => (
         <ul className="bloc-result" key={index}>
           {[tabUsers].map((user, index) => (
-            <li className="resultData " key={index}>
+            <li className="resultData" key={index}>
               <span className="span-title">
                 {user[0][this.state.selectedId]}
               </span>
@@ -106,8 +106,12 @@ class GetData extends React.Component {
   };
 
   componentDidMount = async () => {
-    const response = await axios.get("http://localhost:3000/users");
-    const responseDataName = await axios.get("http://localhost:3000/users");
+    const response = await axios.get(
+      "https://country-census-back.herokuapp.com/users"
+    );
+    const responseDataName = await axios.get(
+      "https://country-census-back.herokuapp.com/users"
+    );
     this.setState({
       usersData: response.data,
       SelectDataName: responseDataName.data
