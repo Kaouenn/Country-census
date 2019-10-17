@@ -36,7 +36,7 @@ class GetData extends React.Component {
 
     if (this.state.selectedId.length !== 0) {
       return result.map((tabUsers, index) => (
-        <ul className="bloc-result" key={index}>
+        <ul key={index}>
           {[tabUsers].map((user, index) => (
             <li className="resultData" key={index}>
               <span className="span-title">
@@ -82,10 +82,10 @@ class GetData extends React.Component {
                 })
               )} */}
 
-              <option value="education">Education</option>
               <option value="birth country">Birth country</option>
-              <option value="sex">Sex</option>
               <option value="mace">Mace</option>
+              <option value="sex">Sex</option>
+              <option value="education">Education</option>
             </select>
           </div>
           <ul>
@@ -99,6 +99,7 @@ class GetData extends React.Component {
               <span className="span-age"> Average age</span>
             </li>
           </ul>
+
           {this.renderTotalPerUser([this.state.selectedId])}
         </div>
       </div>

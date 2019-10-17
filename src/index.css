@@ -35,8 +35,29 @@ ul {
 
 /* /////// Get Data /////// */
 
+.bloc-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll; /* showing scrollbars */
+}
+
+.bloc-result::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.bloc-result::-webkit-scrollbar:vertical {
+  width: 2.5%;
+}
+
+.bloc-result::-webkit-scrollbar:horizontal {
+  height: 29px;
+}
 .get-data {
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
