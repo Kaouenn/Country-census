@@ -4,8 +4,9 @@ import axios from "axios";
 class GetData extends React.Component {
   state = {
     usersData: [],
-    SelectDataName: [],
-    selectedId: ""
+    selectDataName: [],
+    selectedId: "",
+    isLoading: true
   };
 
   handleChange = event => {
@@ -70,25 +71,28 @@ class GetData extends React.Component {
               onChange={this.handleChange}
             >
               <option value="">Choose your Data ..</option>
-              {/* {Object.keys(
-                this.state.selectedId[0].map(keyName => {
-                  const items = this.state.selectedId[0][keyName];
 
-                  return (
-                    <option key={items._id} value={items._id}>
-                      {items.age}
-                    </option>
-                  );
-                })
-              )} */}
+              {this.state.isLoading === true ? (
+                <option>En cours de chargement ...</option>
+              ) : (
+                Object.keys(this.state.selectDataName[0]).map(
+                  (keyName, index) => {
+                    return (
+                      <option key={index} value={keyName.toString()}>
+                        {keyName.toString()}
+                      </option>
+                    );
+                  }
+                )
+              )}
 
-              <option value="birth country">Birth country</option>
+              {/* <option value="birth country">Birth country</option>
               <option value="father birth country">Father birth country</option>
               <option value="mother birth country">Mother birth country</option>
               <option value="lived-here">Lived-here</option>
               <option value="mace">Mace</option>
               <option value="sex">Sex</option>
-              <option value="education">Education</option>
+              <option value="education">Education</option> */}
             </select>
           </div>
           <ul>
@@ -118,7 +122,8 @@ class GetData extends React.Component {
     );
     this.setState({
       usersData: response.data,
-      SelectDataName: responseDataName.data
+      selectDataName: responseDataName.data,
+      isLoading: false
     });
   };
 }
