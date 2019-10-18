@@ -85,14 +85,6 @@ class GetData extends React.Component {
                   }
                 )
               )}
-
-              {/* <option value="birth country">Birth country</option>
-              <option value="father birth country">Father birth country</option>
-              <option value="mother birth country">Mother birth country</option>
-              <option value="lived-here">Lived-here</option>
-              <option value="mace">Mace</option>
-              <option value="sex">Sex</option>
-              <option value="education">Education</option> */}
             </select>
           </div>
           <ul>
