@@ -4,7 +4,6 @@ import axios from "axios";
 class GetData extends React.Component {
   state = {
     usersData: [],
-    selectDataName: [],
     selectedId: "",
     isLoading: true
   };
@@ -75,24 +74,14 @@ class GetData extends React.Component {
               {this.state.isLoading === true ? (
                 <option>En cours de chargement ...</option>
               ) : (
-                Object.keys(this.state.selectDataName[0]).map(
-                  (keyName, index) => {
-                    return (
-                      <option key={index} value={keyName.toString()}>
-                        {keyName.toString()}
-                      </option>
-                    );
-                  }
-                )
+                Object.keys(this.state.usersData[0]).map((keyName, index) => {
+                  return (
+                    <option key={index} value={keyName.toString()}>
+                      {keyName.toString()}
+                    </option>
+                  );
+                })
               )}
-
-              {/* <option value="birth country">Birth country</option>
-              <option value="father birth country">Father birth country</option>
-              <option value="mother birth country">Mother birth country</option>
-              <option value="lived-here">Lived-here</option>
-              <option value="mace">Mace</option>
-              <option value="sex">Sex</option>
-              <option value="education">Education</option> */}
             </select>
           </div>
           <ul>
@@ -117,12 +106,8 @@ class GetData extends React.Component {
     const response = await axios.get(
       "https://country-census-back.herokuapp.com/users"
     );
-    const responseDataName = await axios.get(
-      "https://country-census-back.herokuapp.com/users"
-    );
     this.setState({
       usersData: response.data,
-      selectDataName: responseDataName.data,
       isLoading: false
     });
   };
