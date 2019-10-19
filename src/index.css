@@ -182,10 +182,16 @@ select {
   .resultData .span-number {
     left: 40%;
   }
-  .resultData-informations span,
-  .resultData span {
+  .resultData-informations span {
     padding: 0 5px;
+    max-width: 140px;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  .resultData span {
+    padding: 0 20px 0 0;
+    max-width: 130px;
+    font-size: 13px;
   }
 }
