@@ -13,10 +13,6 @@ class GetData extends React.Component {
     this.setState({ [event.target.name]: value });
   };
 
-  sortNumber(a, b) {
-    return b - a;
-  }
-
   averageAge = data => {
     let total = 0;
     for (var i = 0; i < data.length; i++) {
@@ -75,11 +71,15 @@ class GetData extends React.Component {
                 <option>En cours de chargement ...</option>
               ) : (
                 Object.keys(this.state.usersData[0]).map((keyName, index) => {
-                  return (
-                    <option key={index} value={keyName.toString()}>
-                      {keyName.toString()}
-                    </option>
-                  );
+                  if (keyName !== "_id") {
+                    return (
+                      <option key={index} value={keyName.toString()}>
+                        {keyName.toString()}
+                      </option>
+                    );
+                  } else {
+                    return null;
+                  }
                 })
               )}
             </select>
