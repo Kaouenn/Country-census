@@ -13,6 +13,10 @@ class GetData extends React.Component {
     this.setState({ [event.target.name]: value });
   };
 
+  sortNumber(a, b) {
+    return b - a;
+  }
+
   averageAge = data => {
     let total = 0;
     for (var i = 0; i < data.length; i++) {
@@ -65,9 +69,7 @@ class GetData extends React.Component {
               name="selectedId"
               onChange={this.handleChange}
             >
-              <option value="">
-                Select the feature you want to analyze 🤓
-              </option>
+              <option value="">Choose your Data ..</option>
 
               {this.state.isLoading === true ? (
                 <option>En cours de chargement ...</option>

@@ -1,11 +1,11 @@
 import React from "react";
-import usaFlag from "./usaFlag.png";
+import usaFlag from "../Img/usaFlag.png";
 
 function Header() {
   return (
     <div className="header">
       <h1>
-        Country Census <span className="header-subtitle">(America)</span> {""}
+        Country Census <span className="header-subtitle">(America)</span>
       </h1>
       <img src={usaFlag} className="header-img" alt="img" />
     </div>
