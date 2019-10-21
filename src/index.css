@@ -127,6 +127,7 @@ select {
 .resultData-informations span {
     max-width: 360px;
   position: absolute;
+  max-width: 354px;
   padding: 0 15px;
   text-transform: capitalize;
 }
