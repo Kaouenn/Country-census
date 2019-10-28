@@ -1,6 +1,6 @@
 ![Overview](https://res.cloudinary.com/dnhwttpnq/image/upload/v1571409101/Counter%20Country/pic2_uie14n.png)
 
-# Budget Web App
+# Country census
 
 > Browse an excerpt of a census database 🇱🇷
 
